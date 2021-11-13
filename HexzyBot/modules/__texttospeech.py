@@ -31,7 +31,7 @@ async def _(event):
         return
     if event.is_group:
      if not (await is_register_admin(event.input_chat, event.message.sender_id)):
-       await event.reply("🚨 Need Admin Pewer.. You can't use this command.. But you can use in my [Pm](http://t.me/HexzyBot)")
+       await event.reply("🔴Need Admin Power.. You can't use this command.. But you can use in my [Pm🤗](http://t.me/Auroraskbot)")
        return
 
     input_str = event.pattern_match.group(1)
@@ -51,7 +51,7 @@ async def _(event):
     lan = lan.strip()
     try:
         tts = gTTS(text, tld="com", lang=lan)
-        tts.save("TalkingHexzy.mp3")
+        tts.save("AuroraAI.mp3")
     except AssertionError:
         await event.reply(
             "The text is empty.\n"
@@ -68,8 +68,8 @@ async def _(event):
     except gTTSError:
         await event.reply("Error in Google Text-to-Speech API request !")
         return
-    with open("TalkingHexzy.mp3", "r"):
+    with open("AuroraAI.mp3", "r"):
         await tbot.send_file(
-            event.chat_id, "TalkingHexzy.mp3", voice_note=True, reply_to=reply_to_id
+            event.chat_id, "AuroraAI.mp3", voice_note=True, reply_to=reply_to_id
         )
-        os.remove("TalkingHexzy.mp3")
+        os.remove("AuroraAI.mp3")
