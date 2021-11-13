@@ -16,10 +16,10 @@ from pyrogram import filters
 from HexzyBot import (bot_start_time, DEV_USERS, pbot)
 from HexzyBot.utils import formatter
 
-__mod_name__ = "⚡️Sudoers⚡️"
+__mod_name__ = "🤗Reserved"
 
 __help__ = """
-*Only for group owner:*
+*Only for Group Owner And Dragons:*
  ❍ /stats - To Check System Status.
  ❍ /gstats - Comming Soon 
  ❍ /gban - Comming Soon 
@@ -38,7 +38,8 @@ async def bot_sys_stats():
     disk = psutil.disk_usage("/").percent
     process = psutil.Process(os.getpid())
     stats = f"""
-root@Prabha_sha:~$ HexzyBot 
+                    Ⱥմɾօɾą
+root@Boy_alone_in_universe:~$ The-Aurora-Project 
 ------------------
 UPTIME: {formatter.get_readable_time((bot_uptime))}
 BOT: {round(process.memory_info()[0] / 1024 ** 2)} MB
@@ -48,23 +49,23 @@ DISK: {disk}%
 """
     return stats
 
-#@pbot.on_message(
-#    filters.command("broadcast") & filters.user(DEV_USERS) & ~filters.edited
-#)
-#@capture_err
-#async def broadcast_message(_, message):
-#    if len(message.command) < 2:
-#        return await message.reply_text("**Usage**:\n/broadcast [MESSAGE]")
-#    text = message.text.split(None, 1)[1]
-#    sent = 0
-#    chats = []
-#    schats = await get_served_chats()
-#    for chat in schats:
-#        chats.append(int(chat["chat_id"]))
-#    for i in chats:
-#        try:
-#            await app.send_message(i, text=text)
-#            sent += 1
-#        except Exception:
-#            pass
-#    await message.reply_text(f"**Broadcasted Message In {sent} Chats.**")
+@pbot.on_message(
+  filters.command("broadcast") & filters.user(DEV_USERS) & ~filters.edited
+)
+@capture_err
+async def broadcast_message(_, message):
+   if len(message.command) < 2:
+        return await message.reply_text("**Usage**:\n/broadcast [MESSAGE]")
+    text = message.text.split(None, 1)[1]
+    sent = 0
+   chats = []
+    schats = await get_served_chats()
+    for chat in schats:
+        chats.append(int(chat["chat_id"]))
+    for i in chats:
+        try:
+            await app.send_message(i, text=text)
+            sent += 1
+       except Exception:
+            pass
+   await message.reply_text(f"**Broadcasted Message In {sent} Chats.**")
