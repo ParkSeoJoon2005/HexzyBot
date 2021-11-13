@@ -84,7 +84,7 @@ async def zombies(event):
         await event.respond("I Am Not An Admin Here!")
         return
 
-    cleaning_zombies = await event.respond("Cleaning Zombies...")
+    cleaning_zombies = await event.respond("**Cleaning Zombies...**")
     del_u = 0
     del_a = 0
 
@@ -158,4 +158,4 @@ __help__ = """
  ❍ /zombies clean :  Clean The Deleted Account In The Group 
  ❍ /kickthefools :  Kicking The Foolers In Group
  """
-__mod_name__ = "⚡️zombies⚡️"
+__mod_name__ = "👻Zombies"
