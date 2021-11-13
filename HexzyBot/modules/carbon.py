@@ -7,7 +7,7 @@
 #from HexzyBot.utils.functions import make_carbon
 
 
-#__mod_name__ = "⚡️Carbon⚡️"
+#__mod_name__ = "Carbon"
 
 #__help__ = """
 # *Help for Carbon Module:*
