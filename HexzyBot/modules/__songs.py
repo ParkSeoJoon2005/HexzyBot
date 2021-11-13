@@ -16,10 +16,10 @@ async def song(client, message):
     message.from_user["id"]
     args = get_arg(message) + " " + "song"
     if args.startswith(" "):
-        await message.reply("<b>Enter song name</b>")
+        await message.reply("<b>Enter Song Name</b>")
         return ""
     m = await message.reply_text(
-        "Downloading your song,\nPlz wait ⏳️"
+        "*Downloading your song,*\n*Plz Wait...!*"
     )
     try:
         r = requests.get(f"https://jostapi.herokuapp.com/saavn?query={args}")
@@ -75,7 +75,7 @@ async def deezer(_, message):
         return
     text = message.text.split(None, 1)[1]
     query = text.replace(" ", "%20")
-    m = await message.reply_text("Searching...")
+    m = await message.reply_text("*Searching...!12%*")
     try:
         r = await fetch(f"{ARQ}deezer?query={query}&count=1")
         title = r[0]["title"]
@@ -84,9 +84,9 @@ async def deezer(_, message):
     except Exception as e:
         await m.edit(str(e))
         return
-    await m.edit("Downloading...")
+    await m.edit("Downloading...!67%")
     song = await download_song(url)
-    await m.edit("Uploading...")
+    await m.edit("Uploading...!99%")
     await message.reply_audio(audio=song, title=title, performer=artist)
     os.remove(song)
     await m.delete()
@@ -125,11 +125,11 @@ async def download_song(url):
 @CHABEE.on_message(filters.command("deezer"))
 async def deezer(_, message):
     if len(message.command) < 2:
-        await message.reply_text("Download Now Deezer")
+        await message.reply_text("Download Now Deezer!")
         return
     text = message.text.split(None, 1)[1]
     query = text.replace(" ", "%20")
-    m = await message.reply_text("Searching...")
+    m = await message.reply_text("Searching...!")
     try:
         r = await fetch(f"{ARQ}deezer?query={query}&count=1")
         title = r[0]["title"]
@@ -138,15 +138,15 @@ async def deezer(_, message):
     except Exception as e:
         await m.edit(str(e))
         return
-    await m.edit("Downloading...")
+    await m.edit("Downloading...!")
     song = await download_song(url)
-    await m.edit("Uploading...")
+    await m.edit("Uploading...!")
     await message.reply_audio(audio=song, title=title, performer=artist)
     os.remove(song)
     await m.delete()
     
     
-__mod_name__ = "⚡️Songs⚡️"
+__mod_name__ = "Song"
 
 __help__ = """
 • `/song`** <songname artist(optional)>: download the song in it's best quality available.(API BASED)
