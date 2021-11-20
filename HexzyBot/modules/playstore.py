@@ -1,5 +1,5 @@
 
-__mod_name__ = "⚡️Apps⚡️"
+__mod_name__ = "Apps"
 
 __help__ = """
 =>> *Playsrore App Searching *
